@@ -1,34 +1,35 @@
-import Head from "next/head";
 import styled from "styled-components";
 import Tuit from "../components/tuit/tuit";
 
 const ContainerMain = styled.section`
   min-height: 100vh;
-  background-color: #000;
+  background-color: black;
+`;
+
+const ContainerGeneral = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const Home = ({ tuits }) => {
   return (
     <>
-      <Head>
-        <title>Tuiteh</title>
-        <meta name="description" content="Tuiteh" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <ContainerMain>
-          {tuits.map((tuit) => {
-            <Tuit date={tuit.date} likes={tuit.likes} text={tuit.text} />;
-          })}
-        </ContainerMain>
-      </main>
+      <ContainerMain>
+        <ContainerGeneral>
+          {tuits.map((tuit) => (
+            <Tuit key={tuit.id} tuit={tuit} />
+          ))}
+        </ContainerGeneral>
+      </ContainerMain>
     </>
   );
 };
 
 export const getServerSideProps = async () => {
-  const request = await fetch(process.env.NEXT_PUBLIC_HEROKUAPI);
-  const tuits = await request.json();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_HEROKUAPI}tuit/all`);
+  const { tuits } = await response.json();
 
   return {
     props: {
