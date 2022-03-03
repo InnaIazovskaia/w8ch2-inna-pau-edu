@@ -4,8 +4,8 @@ const ContainerTuit = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #aa0050;
-  width: 400px;
+  border: 1px solid #2f3336;
+  width: 578px;
   margin: 10px;
   border-radius: 5px;
 `;
@@ -16,8 +16,6 @@ const ContainerTop = styled.div`
   align-items: center;
   margin: 10px;
   padding: 5px;
-  border-radius: 25px;
-  border: 1px solid #aa0050;
 `;
 
 const Date = styled.p`
@@ -25,21 +23,34 @@ const Date = styled.p`
   color: #fff;
 `;
 
-const Likes = styled.p`
+const ContLikes = styled.section`
+  display: flex;
+  color: #fff;
+  font-size: 20px;
+`;
+
+const Likes = styled.button`
+  background: none;
+  border: none;
   font-size: 15px;
   color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
 `;
 const Text = styled.p`
   color: #fff;
   padding: 40px;
-  border: 1px solid #aa0050;
+  border-top: 1px solid #2f3336;
 `;
 
-const Tuit = ({ tuit: { likes, date, text } }) => {
+const Tuit = ({ tuit: { likes, text }, date }) => {
   return (
     <ContainerTuit>
       <ContainerTop>
-        <Likes>{likes}</Likes>
+        <ContLikes>
+          <Likes></Likes>
+          <p>{likes}</p>
+        </ContLikes>
         <Date>{date}</Date>
       </ContainerTop>
       <Text>{text}</Text>
