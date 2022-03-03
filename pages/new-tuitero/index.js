@@ -63,7 +63,7 @@ const TuitInput = () => {
 
   const handleFormChange = (event) => {
     const test = event.target.value;
-    console.log(test);
+
     setTuitero({
       ...tuitero,
       [event.target.id]: event.target.value,
