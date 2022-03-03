@@ -1,24 +1,6 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.get(`${process.env.NEXT_PUBLIC_HEROKUAPI}tuit/all`, (req, res, ctx) =>
-    res(
-      ctx.status(200),
-      ctx.json([
-        {
-          date: "2022-03-03T07:12:53.638Z",
-          text: "Write, with just one T",
-          likes: 0,
-        },
-        {
-          date: "2022-03-03T07:09:08.557Z",
-          text: "I can time travel",
-          likes: 0,
-        },
-      ])
-    )
-  ),
-
   rest.get(
     `${process.env.NEXT_PUBLIC_HEROKUAPI}tuiteros/all`,
     (req, res, ctx) =>
@@ -37,5 +19,25 @@ export const handlers = [
           ],
         })
       )
+  ),
+
+  rest.get(`${process.env.NEXT_PUBLIC_HEROKUAPI}tuit/all`, (req, res, ctx) =>
+    res(
+      ctx.status(200),
+      ctx.json({
+        tuits: [
+          {
+            date: "2022-03-02T20:02:28.763+00:00",
+            likes: 7,
+            text: "first tuit",
+          },
+          {
+            date: "2022-04-02T20:02:28.763+00:00",
+            likes: 72,
+            text: "second tuit",
+          },
+        ],
+      })
+    )
   ),
 ];
