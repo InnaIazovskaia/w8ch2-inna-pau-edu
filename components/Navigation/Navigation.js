@@ -43,6 +43,7 @@ const Navigation = () => {
           <FontAwesomeIcon className="icon" icon={faCrow} />
         </Link>
         <Link href="/">home</Link>
+        <Link href="/tuiteros">tuiteros</Link>
       </ContainerNav>
     </>
   );
