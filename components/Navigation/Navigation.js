@@ -38,11 +38,14 @@ const Navigation = () => {
   return (
     <>
       <ContainerNav>
-        <Link href="/new-tweet">new tweet</Link>
         <Link href="/" passHref>
-          <FontAwesomeIcon className="icon" icon={faCrow} />
+          <a>
+            <FontAwesomeIcon className="icon" icon={faCrow} />
+          </a>
         </Link>
         <Link href="/">home</Link>
+        <Link href="/new-tweet">new tweet</Link>
+        <Link href="/new-tuitero">new tuitero</Link>
         <Link href="/tuiteros">tuiteros</Link>
       </ContainerNav>
     </>
