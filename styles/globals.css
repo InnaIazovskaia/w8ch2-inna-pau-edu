@@ -2,4 +2,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  background-color: azure;
+  color: #1c9bef;
 }
