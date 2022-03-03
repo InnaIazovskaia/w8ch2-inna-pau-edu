@@ -1,3 +1,5 @@
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 const ContainerTuit = styled.div`
@@ -36,6 +38,13 @@ const Likes = styled.button`
   color: #fff;
   font-size: 20px;
   margin-right: 10px;
+
+  & .icon {
+    color: white;
+  }
+  & .icon:hover {
+    color: #1c9bef;
+  }
 `;
 const Text = styled.p`
   color: #fff;
@@ -48,7 +57,9 @@ const Tuit = ({ tuit: { likes, text }, date }) => {
     <ContainerTuit>
       <ContainerTop>
         <ContLikes>
-          <Likes></Likes>
+          <Likes>
+            <FontAwesomeIcon className="icon" icon={faHeart} />
+          </Likes>
           <p>{likes}</p>
         </ContLikes>
         <Date>{date}</Date>
