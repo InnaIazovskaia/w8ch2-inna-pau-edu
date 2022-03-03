@@ -13,12 +13,14 @@ const ContainerNav = styled.section`
     font-size: 30px;
     margin: 30px;
     color: white;
+    cursor: pointer;
   }
   & .icon:hover {
     color: #1c9bef;
   }
 
   & a {
+    cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -36,11 +38,11 @@ const Navigation = () => {
   return (
     <>
       <ContainerNav>
-        <Link href="/newtweet">tweet</Link>
+        <Link href="/new-tweet">new tweet</Link>
         <Link href="/" passHref>
           <FontAwesomeIcon className="icon" icon={faCrow} />
         </Link>
-        <Link href="/uwu">uwu</Link>
+        <Link href="/">home</Link>
       </ContainerNav>
     </>
   );
