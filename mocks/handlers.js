@@ -18,4 +18,24 @@ export const handlers = [
       ])
     )
   ),
+
+  rest.get(
+    `${process.env.NEXT_PUBLIC_HEROKUAPI}tuiteros/all`,
+    (req, res, ctx) =>
+      res(
+        ctx.status(200),
+        ctx.json({
+          tuiteros: [
+            {
+              name: "Cristiano",
+              username: "cr7",
+            },
+            {
+              name: "Messi",
+              username: "d10s",
+            },
+          ],
+        })
+      )
+  ),
 ];
